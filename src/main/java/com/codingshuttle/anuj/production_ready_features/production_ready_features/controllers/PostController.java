@@ -27,6 +27,10 @@ public class PostController {
     @PostMapping
     public PostDTO createPost(@RequestBody PostDTO postDTO){
         return postService.createPost(postDTO);
+    }
 
+    @PutMapping(path = "/{postId}")
+    public PostDTO updatePost(@PathVariable Long postId, @RequestBody PostDTO postDTO){
+        return postService.updatePost(postId, postDTO);
     }
 }
