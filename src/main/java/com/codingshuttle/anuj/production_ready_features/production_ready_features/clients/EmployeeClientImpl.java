@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class EmployeeClientImpl implements EmployeeClient{
 
-
+    Logger logger = LoggerFactory.getLogger(EmployeeClientImpl.class);
 
     @Autowired
     private RestClient restClient;
@@ -26,14 +26,16 @@ public class EmployeeClientImpl implements EmployeeClient{
     @Override
     public List<EmployeeDTO> getAllEmployees() {
         try{
+            logger.info("Something the getAllEmployees");
             ApiResponse<List<EmployeeDTO>> response = restClient.get()
                     .uri("employees")
                     .retrieve()
                     .body(new ParameterizedTypeReference<>() {
                     });
+            logger.trace("Retrieved the data : {}", response);
             return response.getData();
         } catch (Exception e){
-
+            logger.trace("Something when wrong in getAllEmployees");
             throw new RuntimeException(e);
         }
     }
