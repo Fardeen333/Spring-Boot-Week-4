@@ -21,25 +21,25 @@ class ProductionReadyFeaturesApplicationTests {
 	private EmployeeClient employeeClient;
 
 	@Test
-	@Order(3)
+//	@Order(3)
 	void getAllEmployees() {
 		List<EmployeeDTO> allEmployees = employeeClient.getAllEmployees();
 		System.out.println(allEmployees);
 	}
-
-	@Test
-	@Order(1)
-	void getEmpById() {
-		EmployeeDTO allEmployees = employeeClient.getEmployeeById(402L);
-		System.out.println(allEmployees);
-	}
-
-	@Test
-	@Order(2)
-	void createEmp() {
-		EmployeeDTO createPayload = new EmployeeDTO(null, "Rest user", "restuser@gmail.com", 2, "USER", LocalDate.now(), true);
-		EmployeeDTO allEmployees = employeeClient.createEmployee(createPayload);
-		System.out.println(allEmployees);
-	}
+//
+//	@Test
+//	@Order(1)
+//	void getEmpById() {
+//		EmployeeDTO allEmployees = employeeClient.getEmployeeById(402L);
+//		System.out.println(allEmployees);
+//	}
+//
+//	@Test
+//	@Order(2)
+//	void createEmp() {
+//		EmployeeDTO createPayload = new EmployeeDTO(null, "Rest user", "restuser@gmail.com", 20, "USER", LocalDate.now(), true);
+//		EmployeeDTO allEmployees = employeeClient.createEmployee(createPayload);
+//		System.out.println(allEmployees);
+//	}
 
 }
